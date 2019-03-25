@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 class Node:
     """Node class to be used with Linked List"""
 
