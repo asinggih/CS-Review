@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from Node import Node
+from LinkedList import LinkedList
 
 
 def test_node_creation_with_value():
@@ -25,3 +26,80 @@ def test_setting_next_node():
     current_node.next = next_node
 
     assert current_node.next.value == 40
+
+
+def test_linked_list_creation():
+    """Test initialisation of LinkedList object"""
+
+    node = Node(12)
+    node2 = Node(20)
+    ll = LinkedList(node)
+    ll.append(node2)
+
+    assert ll.display() == "12, 20"
+
+
+def test_linked_list_size_empty_head():
+
+    ll = LinkedList()
+
+    assert ll.size == 0
+
+
+def test_linked_list_size_non_empty_head():
+
+    ll = LinkedList(Node(20))
+    ll.append(Node(30))
+
+    assert ll.size == 2
+
+
+def test_linked_list_append():
+
+    ll = LinkedList()
+    ll.append(Node(20))
+    ll.append(Node(30))
+
+    assert ll.display() == "20, 30"
+
+
+def test_delete_value_middle():
+
+    blob = [12, 30, 20, 43]
+    ll = LinkedList()
+    for i in blob:
+        ll.append(Node(i))
+    ll.delete(20)
+    assert ll.display() == "12, 30, 43"
+
+
+def test_delete_value_at_head():
+
+    blob = [12, 30, 20, 43]
+    ll = LinkedList()
+    for i in blob:
+        ll.append(Node(i))
+    ll.delete(12)
+    assert ll.display() == "30, 20, 43"
+
+
+def test_delete_value_at_end():
+
+    blob = [12, 30, 20, 43]
+    ll = LinkedList()
+    for i in blob:
+        ll.append(Node(i))
+    ll.delete(43)
+    assert ll.display() == "12, 30, 20"
+
+
+def test_delete_multiple():
+
+    blob = [12, 30, 20, 43]
+    ll = LinkedList()
+    for i in blob:
+        ll.append(Node(i))
+    ll.delete(43)
+    ll.delete(30)
+    ll.delete(12)
+    assert ll.display() == "20"
