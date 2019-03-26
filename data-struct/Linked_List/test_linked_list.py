@@ -123,7 +123,7 @@ def test_delete_at_index():
     for i in blob:
         ll.append(Node(i))
     ll.delete_at_index(0)
-    print(ll.display())
+
     assert "12" not in ll.display()
 
 
