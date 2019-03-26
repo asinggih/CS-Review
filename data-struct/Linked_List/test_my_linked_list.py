@@ -45,12 +45,3 @@ def test_finding_kth_to_last_out_of_range():
         ll.kth_to_last(5)
     assert str(
         e.value) == "0 < k < Linked List's size"
-
-
-def test_delete_middle_node():
-    """test deleting the target node as long as it's not the head or tail"""
-
-    L = [1, 2, 3, 4, 5]
-    ll = MyLinkedList()
-    for i in L:
-        ll.append(Node(i))
