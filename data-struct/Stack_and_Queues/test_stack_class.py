@@ -60,3 +60,21 @@ def test_popping_item_from_empty_stack():
         stack.pop()
 
     assert str(e.value) == "EmptyStackError"
+
+
+def test_returning_smallest_value_in_stack():
+
+    stack = Stack()
+
+    stack.push(10)
+    stack.push(8)
+    stack.push(5)
+    stack.push(-3)
+
+    assert stack.minimum() == -3
+
+    stack.pop()
+    assert stack.minimum() == 5
+
+    stack.pop()
+    assert stack.minimum() == 8
