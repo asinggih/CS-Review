@@ -15,7 +15,7 @@ def test_is_empty_function():
     """Testing the 'is empty' function of the stack"""
 
     stack = Stack()
-    assert stack.is_empty() == True
+    assert stack.is_empty() is True
 
 
 def test_pushing_item_into_stack():
