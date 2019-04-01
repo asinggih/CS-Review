@@ -12,6 +12,7 @@ class Stack:
     def is_empty(self):
         if self.top is None:
             return True
+        return False
 
     def push(self, item):
         node = Node(item)
