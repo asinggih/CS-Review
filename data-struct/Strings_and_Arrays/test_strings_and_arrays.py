@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 
-from rotate_matrix import rotate_matrix, rotate_matrix_in_place, rotate_matrix_pythonic
+from rotate_matrix import \
+    rotate_matrix, \
+    rotate_matrix_in_place,\
+    rotate_matrix_pythonic
 
 
 def test_matrix_rotation_even():
